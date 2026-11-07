@@ -17,7 +17,7 @@ As usual, this is the main driver of your program.
 Additionally, some problems come with a c file that reveals the implementation of certain or all functions to inform you of their proper usage.
 
 ### problem.c
-This is the file you will edit. You may freely add helper functions, but note most of the problems here can be solved cleanly without them.
+This is the file you will edit. You may freely add helper functions, but note most of the problems here can be solved cleanly without them. *Do not delete the TODO as those are your objectives.*
 
 **To start solving the problem, delete ALL the code within the function body.**
 
