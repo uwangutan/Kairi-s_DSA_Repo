@@ -1,9 +1,10 @@
-# IMPORTANT / SOLVING SET-UP: 
+# IMPORTANT / SOLVING SET-UP
 
 ## Files
 Unless you want to practice coding certain functions from scratch, debug, or create a variant of the problem: Do not modify any files except PROBLEM.C 
 
-Note that even if files should compile with a warning, all the code here compiles without error so as long as your own code is correct.
+**Note that even if files should compile with a warning, all the code here compiles without error so as long as your own code is correct.**
+
 ---
 
 ### main.c
