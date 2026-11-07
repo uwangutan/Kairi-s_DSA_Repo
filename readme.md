@@ -29,6 +29,7 @@ Some instructions are intentionally vague and resemble concepts or overall logic
 ### Solving
 Keep this concept in mind for solving: 
 > "Use what you have to your disposal". 
+
 Many problem files come with pre-made functions and formulas in their instructions. **Ideally these are implemented as they are usually considered the most efficient solutions to the problem.** Solve however you want, but ensure you are not adding complexity to or brute-forcing the problem *(this may result in point deductions during major exams)*.
 
 ### Instructions
