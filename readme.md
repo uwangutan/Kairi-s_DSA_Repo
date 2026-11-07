@@ -1,6 +1,19 @@
 # IMPORTANT / SOLVING SET-UP
 
-## Files
+## Folder Structure 
+Main Folders
+1. **DSA 1**
+2. **DSA 2** 
+
+Under Main Folders:
+**Problem Sets**
+-> **Problems** 
+    -> *Code Files*
+    -> *Instructions_Testcases.md*
+    -> *Images (instructions and sample output 1-3 screenshots)*
+
+
+## Code Files
 Unless you want to practice coding certain functions from scratch, debug, or create a variant of the problem: Do not modify any files except PROBLEM.C 
 
 **Note that even if files should compile with a warning, all the code here compiles without error so as long as your own code is correct.**

@@ -11,7 +11,7 @@
     *lights must hold the final state when the function ends.                 */
 
 int banishGhost(Set *lights, Set switches[], int presses[], int p) {
-        /* =========== DELETE ALL CODE BELOW THIS LINE =========== */
+    /* =========== DELETE ALL CODE BELOW THIS LINE =========== */
     /* PSEUDOCODE:
         - Each bit in the array of switches is a room toggled by the switch
         - Every press toggles the switch
