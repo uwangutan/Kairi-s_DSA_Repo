@@ -1,0 +1,134 @@
+# Introduction to Dictionaries & Hashes
+**NOTE: for the problems in this section, solving happens WITHIN the main.c file. Markers are placed for what you should edit and what you should leave be.**
+
+## 1. What is a Dictionary?
+A Dictionary is a data structure that stores information in key-value pairs. It allows you to quickly find, insert, and delete information using a key instead of searching through every element.
+
+Practical Uses:
+
+- Student information systems: Find a student's record using their student ID.
+- Inventory systems: Find product details using a product SKU.
+- User accounts: Retrieve account information using a username.
+- Contact lists: Find someone's contact number using their name.
+
+Example:
+
+| Key (Student ID) | Value (Student Name) |
+| ---------------- | -------------------- |
+| 1001             | Alex                 |
+| 1002             | John                 |
+| 1003             | Mary                 |
+
+To find Mary's name, simply look up the key `1003`.
+
+## 2. What is Hashing?
+
+Hashing converts a key into an array index using a hash function. This determines where an element should be stored in the hash table.
+
+Example hash function:
+
+```
+int HASH(char key) {
+    return (toupper(key) - 'A') % 10;
+}
+```
+
+| Key | Hash Index |
+| --- | ---------- |
+| A   | 0          |
+| B   | 1          |
+| K   | 0          |
+| U   | 0          |
+
+When two or more elements produce the same index, a collision occurs.
+
+Hashing makes searching faster because it allows us to go directly to the expected location instead of checking every element.
+
+- Average searching time: O(1)
+- Worst-case searching time: O(n)
+
+## 3. Collision Handling
+
+There are two main ways to handle collisions:
+
+### A. Open Hashing (Separate Chaining)
+
+Each slot in the hash table (array) stores a pointer to the head of a linked list. If multiple elements have the same hash index, they are stored in the same linked list.
+
+Example: Inserting `A`, `K`, and `U` using front insertion:
+
+```
+Index     Linked List
+
+  0       U -> K -> A -> NULL
+  1       NULL
+  2       NULL
+  ...
+  9       NULL
+```
+
+- Each array slot represents the head of a linked list.
+- Empty buckets contain `NULL`.
+- Searching and deletion involve traversing the corresponding linked list.
+
+Searching Time Complexity:
+
+- Average: O(1)
+- Worst: O(n), when all elements belong to the same bucket.
+
+### B. Closed Hashing (Linear Probing)
+
+All elements are stored directly inside the hash table array. When a collision occurs, check the next available slot until an empty one is found.
+
+Example: Inserting `A`, `K`, and `U`:
+
+```
+Index     Element
+
+  0       A
+  1       K
+  2       U
+  3       EMPTY
+  ...
+  9       EMPTY
+```
+
+- Check the next index (`index + 1`) when a collision occurs.
+- If the end of the array is reached, wrap around to index 0.
+- Searching follows the same probing sequence.
+
+Searching Time Complexity:
+
+- Average: O(1)
+- Worst: O(n), when many slots need to be checked.
+
+Other Closed Hashing Techniques:
+
+- Quadratic Probing: Checks positions using squared intervals instead of checking consecutive slots.
+- Double Hashing: Uses a second hash function to determine the next position to check.
+
+## 4. Dictionaries in Other Languages
+
+Dictionaries and hash tables are already implemented in many programming languages, such as Python, Java, C++, and JavaScript.
+
+These languages provide built-in data structures that handle hashing, collisions, insertion, deletion, and searching internally. Programmers don't always have to implement the hash table themselves.
+
+## 5. Using Different Data Types
+
+Dictionaries are not limited to storing integers or characters. They can also store entire structures (`struct`).
+
+For example:
+
+```
+typedef struct {
+    int id;
+    char name[50];
+    float grade;
+} Student;
+```
+
+A dictionary can use the student's `id` as the key while storing the entire `Student` structure as the value.
+
+Remember: The key determines where the data is stored, while the value contains the information associated with that key.
+
+> Note in this course, you do not need to learn how to implement the hash functions, but if you want to, there are a variety of formulas you can use with the simplest being **x modulo y.**
